@@ -4,6 +4,7 @@ const schema = require("./schema/schema.js");
 const connectDB = require("./config/db.js");
 require("dotenv").config();
 const colors = require("colors");
+const cors = require("cors");
 
 const PORT = process.env.PORT || 5000;
 
@@ -11,6 +12,8 @@ const app = express();
 
 //Conectando ao Banco de dados.
 connectDB();
+
+app.use(cors());
 
 app.use(
   "/graphql",

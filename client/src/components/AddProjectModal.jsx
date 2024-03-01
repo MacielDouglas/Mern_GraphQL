@@ -2,7 +2,6 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useState } from "react";
 import { FaList } from "react-icons/fa";
 import { GET_CLIENTS } from "../queries/clientQueries";
-import Spinner from "./Spinner";
 import { ADD_PROJECT } from "../mutations/projectMutations";
 import { GET_PROJECTS } from "../queries/projectQueries";
 

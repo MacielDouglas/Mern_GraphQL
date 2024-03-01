@@ -1,4 +1,5 @@
 import { FaEnvelope, FaPhone, FaIdBadge } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 export default function ClientInfo({ client }) {
   if (client === null)
@@ -25,3 +26,11 @@ export default function ClientInfo({ client }) {
     </>
   );
 }
+
+ClientInfo.propTypes = {
+  client: PropTypes.shape({
+    phone: PropTypes.string.isRequired, // ID do cliente (obrigatório)
+    name: PropTypes.string.isRequired, // Nome do cliente (obrigatório)
+    email: PropTypes.string.isRequired, // Telefone do cliente (obrigatório)
+  }).isRequired, // A propriedade client é obrigatória
+};

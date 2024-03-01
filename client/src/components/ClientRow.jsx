@@ -2,8 +2,6 @@ import { useMutation } from "@apollo/client";
 import { FaTrash } from "react-icons/fa";
 import { DELETE_CLIENT } from "../mutations/clientMutations"; // Importação da mutação DELETE_CLIENT
 import PropTypes from "prop-types";
-import { GET_CLIENTS } from "../queries/clientQueries";
-import { GET_PROJECT } from "../queries/projectQueries";
 
 // Componente ClientRow responsável por renderizar uma linha na tabela de clientes
 export default function ClientRow({ client }) {

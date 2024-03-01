@@ -2,6 +2,7 @@ import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { UPDATE_PROJECT } from "../mutations/projectMutations";
 import { GET_PROJECT } from "../queries/projectQueries";
+import PropTypes from "prop-types";
 
 export default function EditProjectForm({ project }) {
   const [name, setName] = useState(project.name);
@@ -66,3 +67,13 @@ export default function EditProjectForm({ project }) {
     </div>
   );
 }
+
+// Definição das propTypes para validar as propriedades passadas para o componente
+EditProjectForm.propTypes = {
+  // Propriedade client deve ser um objeto com id, name, email e phone, todos obrigatórios
+  project: PropTypes.shape({
+    id: PropTypes.string.isRequired, // ID do cliente (obrigatório)
+    name: PropTypes.string.isRequired, // Nome do cliente (obrigatório)
+    description: PropTypes.string.isRequired, // Telefone do cliente (obrigatório)
+  }).isRequired, // A propriedade client é obrigatória
+};
